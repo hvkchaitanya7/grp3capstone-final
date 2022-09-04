@@ -1,1 +1,19 @@
 Steps for deployment:
+Run colab and save model.h5 and encoded_tokenizer.pkl files
+Create FastAPI folder with all the files.
+Create main.py with all the imports and methods required to predict the image uploaded from local drive
+Create Dockerfile with all configuration and CMD exec to run the FastAPI on gunicorn with uvicorn workers and timeout to 600
+  Changed pip to pip3 in 'RUN pip3 install -r requirements.txt' as there are errors related to tensorflow version with  python 2.7 version
+Create requirements.txt file with all the packages required to be installed for the application to run
+Go to Google cloud and create application.
+Download and install Google cloud SDK
+Open Command prompt and run the below commands
+  cd <folder_path_on_local>
+	gcloud init --it sets your gmail
+	gcloud config get-value project 
+	gcloud builds submit --tag gcr.io/deploy-aic-lstm/aiclstm --deploy-aic-lstm is project id created in cloud and aiclstm is service name we intend to give
+This create container image in google clour run
+Search for Cloud run in Cloud console and click on create service
+Enter configurations as required and click on deploy
+It takes few minutes for the URL to be displayed
+For CI/CD,click on 'Enable continuous deployment' on home page of Cloud run and enter repo.
