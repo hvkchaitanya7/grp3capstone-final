@@ -98,9 +98,7 @@ Open Command prompt and run the below commands
 
    gcloud config get-value project
 
-   gcloud builds submit --tag gcr.io/deploy-aic-lstm/aiclstm --deploy-aic-lstm is project id created in cloud and aiclstm is service name we
-
- intend to give
+   gcloud builds submit --tag gcr.io/deploy-aic-lstm/aiclstm --deploy-aic-lstm is project id created in cloud and aiclstm is service name we intend to give
 
 This create container image in google clour run
 
